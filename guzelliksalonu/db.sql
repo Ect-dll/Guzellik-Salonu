@@ -1,0 +1,40 @@
+CREATE DATABASE IF NOT EXISTS batuhan_panel;
+USE batuhan_panel;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fullname VARCHAR(150),
+  email VARCHAR(150) UNIQUE,
+  password VARCHAR(255),
+  phone VARCHAR(20),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS appointments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  service VARCHAR(150),
+  date DATE,
+  time TIME,
+  status VARCHAR(20) DEFAULT 'beklemede',
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  product VARCHAR(150),
+  price DECIMAL(10,2),
+  quantity INT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(150),
+  description TEXT,
+  price DECIMAL(10,2),
+  stock INT DEFAULT 0
+);
