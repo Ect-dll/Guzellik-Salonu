@@ -1,0 +1,210 @@
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ürünler</title>
+  <script src="firewall.js" defer></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background: #ba14e0;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background: #c786d2;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #ffffff;
+    }
+
+    #kullaniciMenusu {
+      color: #ffffff;
+      position: relative;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #kullaniciAdi {
+      font-weight: bold;
+    }
+
+    #kullaniciMenusu button {
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+      vertical-align: middle;
+      padding: 0;
+    }
+
+    #menuBox {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 35px;
+      background:#c786d2;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      min-width: 140px;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    #menuBox a {
+      padding: 10px 15px;
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: normal;
+      border-bottom: 1px solid#c786d2;
+      transition: background-color 0.3s ease;
+    }
+
+    #menuBox a:last-child {
+      border-bottom: none;
+    }
+
+    #menuBox a:hover {
+      background-color:#c786d2;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #c786d2;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+        margin-left: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      #kullaniciMenusu {
+        order: 1;
+      }
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .urun-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product {
+      flex: 1 1 calc(50% - 20px);
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #0c000a;
+      border-radius: 10px;
+      background: #c786d2;
+      text-align: center;
+    }
+
+    button {
+      padding: 8px 12px;
+      background: #c786d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #c786d2;
+    }
+
+    #sepet {
+      margin-top: 40px;
+      padding: 10px;
+      background: #ff7dcd;
+      border-radius: 10px;
+    }
+  </style>
+  <script src="firewall.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Ürünler</h1>
+</header>
+
+<section>
+  <h2>Ürünlerimiz</h2>
+
+  <div class="urun-container">
+
+    <!-- PHP buraya ürün kartlarını basacak -->
+    {{URUNLER}}
+
+  </div>
+
+</section>
+
+</body>
+</html>

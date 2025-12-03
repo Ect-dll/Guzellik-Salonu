@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anasayfa — Güzellik Merkezi</title>
+  <script src="firewall.js" defer></script>
+  <style>
+    :root {
+      --primary: #EFA3B8;
+      --secondary: #FFEAEA;
+      --accent: #F28C8C;
+      --text-dark: #333333;
+      --text-light: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--secondary);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #E68EA7;
+      padding: 12px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: #FFE5EA;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .hero-content a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .hero-content a:hover {
+      background: #e06767;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      background: var(--text-light);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: #555;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #E68EA7;
+      color: var(--text-light);
+      margin-top: 20px;
+    }
+
+    @media (max-width:768px){
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* Kullanıcı Menüsü */
+    #hamburgerMenu {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      z-index: 1000;
+    }
+
+    #hamburgerMenu button {
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+    }
+
+    #userDropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 35px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      min-width: 180px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    #userDropdown a, #userDropdown div {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    #userDropdown a:hover {
+      background: #f5f5f5;
+    }
+
+    #userDropdown .username {
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dünya'nın İstediği Güzellik Merkezi</h1>
+</header>
+
+<!-- PHP MENÜ BURAYA OTURACAK (index.php tarafından) -->
+<!-- Tema içinde artık NAV / HAMBURGER yok -->
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Güzelliğini Keşfet</h1>
+    <p>Kendini yenile, parlayan bir sen ol.</p>
+    <a href="urunler.php">Hizmetleri Keşfet</a>
+    <a href="randevu_ekle.php" style="margin-left:10px;">Randevu Al</a>
+  </div>
+</section>
+
+<main class="container">
+  <h2 style="text-align:center; color:#EFA3B8">Popüler Hizmetlerimiz</h2>
+
+  <div class="grid">
+    <div class="card"><h3>Cilt Bakımı</h3><p>Doğal ışıltını geri kazan.</p></div>
+    <div class="card"><h3>Manikür & Pedikür</h3><p>Bakımlı eller, zarif detaylar.</p></div>
+    <div class="card"><h3>Saç Bakımı</h3><p>Canlı, hacimli ve sağlıklı saçlar.</p></div>
+    <div class="card"><h3>Masaj</h3><p>Stresini at, rahatla ve yenilen.</p></div>
+    <div class="card"><h3>Depilasyon</h3><p>Pürüzsüz bir cilt deneyimi.</p></div>
+    <div class="card"><h3>Makyaj</h3><p>Özel günlerin için profesyonel makyaj.</p></div>
+  </div>
+</main>
+
+<footer>&copy; 2025 Dünya'nın İstediği Güzellik Merkezi</footer>
+
+</body>
+</html>
