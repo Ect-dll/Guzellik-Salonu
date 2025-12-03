@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Siparişlerim</title>
+  <script src="firewall.js" defer></script>
+    <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f3f3;
+    }
+
+    header {
+      background: #e91e63;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #f06292;
+      padding: 10px 20px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #d81b60;
+    }
+
+    /* Kullanıcı menüsü */
+    #kullaniciMenusu {
+      color: white;
+      position: relative;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #kullaniciAdi {
+      font-weight: bold;
+    }
+
+    #kullaniciMenusu button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      vertical-align: middle;
+      padding: 0;
+    }
+
+    #menuBox {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 35px;
+      background: #f06292;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      min-width: 140px;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    #menuBox a {
+      padding: 10px 15px;
+      display: block;
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      border-bottom: 1px solid #d81b60;
+      transition: background-color 0.3s ease;
+    }
+
+    #menuBox a:last-child {
+      border-bottom: none;
+    }
+
+    #menuBox a:hover {
+      background-color: #d81b60;
+    }
+
+    /* Responsive: hamburger menu for nav */
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #f06292;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 999;
+        margin-left: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      #kullaniciMenusu {
+        order: 1;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f8bbd0;
+      color: #333;
+    }
+
+    tr:hover {
+      background-color: #fce4ec;
+    }
+
+    .no-data {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>Siparişlerim</header>
+
+<div class="container">
+  <h2>Geçmiş Siparişler</h2>
+
+  <!-- PHP buraya tabloyu basacak -->
+  {{SIPARISLER}}
+
+</div>
+
+</body>
+</html>
